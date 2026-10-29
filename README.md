@@ -1,20 +1,66 @@
-# SD - LAB: Comunicação entre Nós, Serviços e Investigação de Falhas
+# Acolhe-te
 
-## Identificação do Grupo
-**Grupo 03**
-- **Talita Sabine** — RA: 2920482421039
-- **Gabriele Monteiro** — RA: 2920482421013
-- **Tainá Kasai** — RA: 2920482421010
-- **Amando Carvalho** — RA: 2920482421007
+## Sistema Distribuído de Alertas de Emergência em Rede Resiliente
 
-## Descrição da Atividade
-Implementação e simulação de um cluster didático distribuído contendo 1 nó Manager e 2 nós Workers no software Cisco Packet Tracer. O experimento analisa os protocolos de comunicação (ARP, ICMP, HTTP), a tolerância a falhas parciais por isolamento de nós e o impacto da queda de componentes centrais (switch e nó de gerência) sobre a disponibilidade dos serviços para os clientes.
+Este repositório reúne o projeto interdisciplinar do **Grupo 3** do curso de
+Tecnologia em Análise e Desenvolvimento de Sistemas da Fatec. O projeto é
+desenvolvido em conjunto pelas disciplinas de **Inglês**, **Redes de
+Computadores** e **Sistemas Distribuídos**.
 
-## Link do Vídeo de Demonstração
-🎥 **Assista ao vídeo da simulação aqui:** [Cole o link do YouTube Não Listado ou OneDrive aqui]
+## Sobre o projeto
 
-## Estrutura do Repositório
-- `README.md`: Identificação, descrição e link do vídeo.
-- `SD_Lab_GrupoX.pkt`: Topologia final e configurações do laboratório no Cisco Packet Tracer (com todos os nós restaurados e a funcionar).
-- `Relatorio_SD_GrupoX.pdf`: Relatório técnico completo com as respostas às questões investigativas, tabela de hipóteses/testes e conclusão do desafio final.
-- `evidencias/`: Pasta contendo as capturas de ecrã (E1 a E12) que comprovam a execução dos testes e a observação de pacotes no modo de simulação.
+O **Acolhe-te** propõe um protótipo de envio de mensagens para situações de
+emergência em um campus universitário e em comunidades. A solução busca formar
+uma rede resiliente de alertas, capaz de continuar transmitindo mensagens
+mesmo quando houver falhas, congestionamento ou ausência de conexão externa,
+como internet e sinal de telefonia.
+
+Em uma situação de emergência, um nó com botão de acionamento gera o alerta.
+Esse alerta pode ser retransmitido por uma rede em malha até um gateway, que o
+publica em um broker MQTT. Um serviço de alertas distribui a mensagem para
+painéis e dispositivos na rede local, registra as confirmações de recebimento
+(ACK) e realiza reenvios quando necessário. O enlace sem fio e os nós podem ser
+implementados ou simulados, permitindo testar rotas alternativas, perda de
+pacotes e a indisponibilidade temporária de componentes.
+
+O projeto relaciona um problema social real aos conteúdos do curso:
+
+- **Redes de Computadores:** topologia, endereçamento, enlaces sem fio,
+  transmissão e métricas de rede;
+- **Sistemas Distribuídos:** comunicação entre componentes, troca de mensagens,
+  filas, confirmação de recebimento, tolerância a falhas e disponibilidade;
+- **Inglês:** documentação técnica, README, glossário e apresentação oral.
+
+## Organização das entregas
+
+As atividades estão separadas em pastas para facilitar a realização e a
+entrega individual de cada disciplina:
+
+- [`Redes de Computadores/`](./Redes%20de%20Computadores/): plano de projeto e
+  materiais relacionados à topologia e à comunicação da rede;
+- [`Sistemas Distribuidos/`](./Sistemas%20Distribuidos/): arquivos da
+  simulação, evidências e documentação do laboratório de sistemas
+  distribuídos;
+- [`Inglês/`](./Ingl%C3%AAs/): README, glossário e demais entregas de inglês
+  técnico.
+
+## Equipe
+
+- **Amanda Carvalho** — gestora da equipe
+- **Gabriele Monteiro**
+- **Juliana Melo**
+- **Taina Kasai** — líder da equipe
+- **Talita Sabine**
+
+## Objetivo geral
+
+Planejar, implementar em protótipo ou simulação e avaliar um sistema
+distribuído de alertas de emergência para múltiplos usuários, com operação
+resiliente em um campus ou comunidade, inclusive sem conectividade externa.
+
+## Tecnologias e ferramentas previstas
+
+Python, MQTT/Mosquitto, Docker ou máquinas virtuais, Cisco Packet Tracer ou
+Mininet, ferramentas de análise de rede e Git. Como extensão futura, o projeto
+poderá utilizar placas ESP32 com módulos LoRa, além de integração com o Projeto
+Acolhe-te, aplicativo móvel, autenticação e criptografia de ponta a ponta.
